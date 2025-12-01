@@ -1,1 +1,58 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Fichiers IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Fichiers de configuration locaux
+config/database.local.php
 .env
+.env.local
+
+# Dossier uploads 
+public/uploads/*
+!public/uploads/default-event.jpg
+!public/uploads/.gitkeep
+
+# Logs
+*.log
+error_log
+debug.log
+
+# Cache
+cache/
+tmp/
+temp/
+
+# Dépendances 
+vendor/
+composer.phar
+composer.lock
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+*.sql.backup
+
+# Fichiers temporaires PHP
+*.php~
+*.phps
+
+# Fichiers de test
+phpunit.xml
+.phpunit.result.cache
+
+# Documentation générée
+docs/_build/
+
+# Fichiers Mac
+__MACOSX/
+
+# Fichiers Windows
+*.lnk
