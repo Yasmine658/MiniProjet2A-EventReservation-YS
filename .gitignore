@@ -15,10 +15,6 @@ config/database.local.php
 .env
 .env.local
 
-# Dossier uploads 
-public/uploads/*
-!public/uploads/default-event.jpg
-!public/uploads/.gitkeep
 
 # Logs
 *.log

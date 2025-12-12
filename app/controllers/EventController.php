@@ -26,7 +26,7 @@ class EventController {
         $event = $this->eventModel->getById($id);
         
         if (!$event) {
-            header('Location: /MiniEvent/public/events');
+            header('Location: /events');
             exit();
         }
         
@@ -37,7 +37,7 @@ class EventController {
     }
     public function reserve() {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            header('Location: /MiniEvent/public/events');
+            header('Location: /events');
             exit();
         }
 
@@ -77,7 +77,7 @@ class EventController {
         if (!empty($errors)) {
             $_SESSION['reservation_errors'] = $errors;
             $_SESSION['reservation_data'] = $_POST;
-            header('Location: /MiniEvent/public/event/' . $eventId);
+            header('Location: /event/' . $eventId);
             exit();
         }
 
@@ -92,11 +92,11 @@ class EventController {
             $_SESSION['reservation_success'] = true;
             $_SESSION['reservation_event'] = $event['title'];
             $_SESSION['reservation_name'] = $name;
-            header('Location: /MiniEvent/public/event/' . $eventId . '?success=1');
+            header('Location: /event/' . $eventId . '?success=1');
         } else {
             $_SESSION['reservation_errors'] = [$result['message']];
             $_SESSION['reservation_data'] = $_POST;
-            header('Location: /MiniEvent/public/event/' . $eventId);
+            header('Location: /event/' . $eventId);
         }
         exit();
     }

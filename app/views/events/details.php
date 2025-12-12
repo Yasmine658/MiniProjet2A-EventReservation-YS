@@ -6,7 +6,7 @@ require_once __DIR__ . '/../partials/header.php';
 <section class="event-details">
     <div class="container">
         <div class="back-link">
-            <a href="/MiniEvent/public/"><i class="fas fa-arrow-left"></i> Retour aux événements</a>
+            <a href="/"><i class="fas fa-arrow-left"></i> Retour aux événements</a>
         </div>
 
         <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
@@ -30,9 +30,9 @@ require_once __DIR__ . '/../partials/header.php';
 
         <div class="event-detail-container">
             <div class="event-detail-image">
-                <img src="/MiniEvent/public/uploads/<?php echo htmlspecialchars($event['image']); ?>" 
+                <img src="/uploads/<?php echo htmlspecialchars($event['image']); ?>" 
                      alt="<?php echo htmlspecialchars($event['title']); ?>"
-                     onerror="this.src='/MiniEvent/public/uploads/default-event.jpg'">
+                     onerror="this.src='/uploads/default-event.jpg'">
             </div>
 
             <div class="event-detail-content">
@@ -77,7 +77,7 @@ require_once __DIR__ . '/../partials/header.php';
                 <?php if (!$event['is_full']): ?>
                     <div class="reservation-form-container">
                         <h2>Réserver votre place</h2>
-                        <form action="/MiniEvent/public/reservation" method="POST" id="reservationForm" class="reservation-form">
+                        <form action="/eservation" method="POST" id="reservationForm" class="reservation-form">
                             <input type="hidden" name="event_id" value="<?php echo $event['id']; ?>">
                             
                             <div class="form-group">
