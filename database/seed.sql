@@ -1,7 +1,9 @@
 USE mini_event;
 
-INSERT INTO admin (username, password_hash) 
-VALUES ('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
+INSERT INTO admin (username, password_hash)
+VALUES ('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.g/at2.uheWG/igi')
+ON DUPLICATE KEY UPDATE password_hash = VALUES(password_hash);
+
 
 INSERT INTO events (title, description, date, location, seats, image) VALUES
 ('Concert Jazz Live', 'Soirée exceptionnelle avec les meilleurs artistes de jazz international. Une ambiance unique pour les amateurs de musique.', '2025-12-15 20:00:00', 'Salle Philharmonie, Tunis', 150, 'jazz-concert.jpg'),
